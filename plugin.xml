@@ -17,6 +17,8 @@
     <engine name="cordova" version=">=2.5.0"/>
   </engines>
 
+  <asset src="www/LaunchMyApp.js" target="js/plugins/LaunchMyApp.js"/>
+
   <!-- ios (finished impl) -->
   <platform name="ios">
     <config-file target="*-Info.plist" parent="CFBundleURLTypes">
@@ -33,6 +35,12 @@
 
   <!-- android -->
   <platform name="android">
+    <config-file target="res/xml/config.xml" parent="plugins">
+      <plugin name="LaunchMyApp" value="nl.xservices.plugins.LaunchMyApp"/>
+    </config-file>
+
+    <source-file src="src/android/nl/xservices/plugins/LaunchMyApp.java" target-dir="src/nl/xservices/plugins"/>
+
     <config-file target="AndroidManifest.xml" parent="/*/application/activity">
       <intent-filter>
         <data android:scheme="$PACKAGE_NAME"/>
