@@ -22,12 +22,12 @@
     <config-file target="*-Info.plist" parent="CFBundleURLTypes">
       <array>
         <dict>
-          <key>CFBundleURLName</key>
-          <string>${PACKAGE_NAME}</string>
           <key>CFBundleURLSchemes</key>
           <array>
-            <string>${PACKAGE_NAME}</string>
+            <string>blaat</string>
           </array>
+          <key>CFBundleURLName</key>
+          <string>sjaak</string>
         </dict>
       </array>
     </config-file>
