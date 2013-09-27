@@ -29,12 +29,6 @@
         </dict>
       </array>
     </config-file>
-    <config-file target="*-Info.plist" parent="NSMainNibFile">
-      <string/>
-    </config-file>
-    <config-file target="*-Info.plist" parent="NSMainNibFile~ipad">
-      <string/>
-    </config-file>
   </platform>
 
   <!-- android -->
