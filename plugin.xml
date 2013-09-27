@@ -3,45 +3,39 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="nl.x-services.plugins.launchmyapp"
         version="1.0">
- 
+
   <name>Launch my App</name>
- 
+
   <description>
-    Launch your app by using this URL:  my.package.name://anything
+    Launch your app by using this URL: my.package.name://anything
     You can even pass params like this: my.package.name://?foo=bar
   </description>
- 
+
   <license>MIT</license>
- 
+
   <engines>
     <engine name="cordova" version=">=2.5.0"/>
   </engines>
- 
+
   <!-- ios -->
-  <platform name="ios">
-    <config-file target="*-Info.plist" parent="CFBundleURLTypes">
-      <array>
-        <dict>
-          <key>CFBundleURLSchemes</key>
-          <array>
+  <platform name="ios"><config-file target="*-Info.plist" parent="CFBundleURLTypes"><array><dict><key>CFBundleURLSchemes</key><array>
             <string>$PACKAGE_NAME</string>
           </array>
         </dict>
       </array>
     </config-file>
   </platform>
- 
-  <!-- android -->
-  <platform name="android">
+
+  <!-- android
+  <platform name="android"
     <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
       <intent-filter>
-        <!-- TODO check ibmobile-ideal intent for correct actions and categories -->
-        <action android:name="android.intent.action.VIEW" />
-        <category android:name="android.intent.category.DEFAULT" />
-        <category android:name="android.intent.category.BROWSABLE" />
-        <data android:scheme="$PACKAGE_NAME" />
+        <action android:name="android.intent.action.VIEW"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <category android:name="android.intent.category.BROWSABLE"/>
+        <data android:scheme="$PACKAGE_NAME"/>
       </intent-filter>
     </config-file>
-  </platform>
- 
+  </platform-->
+
 </plugin>
