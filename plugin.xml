@@ -19,7 +19,8 @@
  
   <!-- ios -->
   <platform name="ios">
-    <config-file target="*-Info.plist" parent="CFBundleURLTypes">
+    <config-file target="*-Info.plist" parent="/plist/dict">
+      <key>CFBundleURLTypes</key>
       <array>
         <dict>
           <key>CFBundleURLSchemes</key>
@@ -27,7 +28,7 @@
             <string>blaat</string>
           </array>
           <key>CFBundleURLName</key>
-          <string>sjaak</string>
+          <string>$PACKAGE_NAME</string>
         </dict>
       </array>
     </config-file>
