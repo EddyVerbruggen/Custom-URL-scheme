@@ -19,13 +19,12 @@
  
   <!-- ios -->
   <platform name="ios">
-    <config-file target="*-Info.plist" parent="/plist/dict">
-      <key>CFBundleURLTypes</key>
+    <config-file target="*-Info.plist" parent="CFBundleURLTypes">
       <array>
         <dict>
           <key>CFBundleURLSchemes</key>
           <array>
-            <string>blaat</string>
+            <string/>
           </array>
           <key>CFBundleURLName</key>
           <string>$PACKAGE_NAME</string>
@@ -42,7 +41,7 @@
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
-        <data android:scheme="${PACKAGE_NAME}" />
+        <data android:scheme="$PACKAGE_NAME" />
       </intent-filter>
     </config-file>
   </platform>
