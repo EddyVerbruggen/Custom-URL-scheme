@@ -24,10 +24,8 @@
         <dict>
           <key>CFBundleURLSchemes</key>
           <array>
-            <string/>
+            <string>$PACKAGE_NAME</string>
           </array>
-          <key>CFBundleURLName</key>
-          <string>$PACKAGE_NAME</string>
         </dict>
       </array>
     </config-file>
