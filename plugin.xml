@@ -17,7 +17,7 @@
     <engine name="cordova" version=">=2.5.0"/>
   </engines>
 
-  <!-- ios -->
+  <!-- ios (finished impl) -->
   <platform name="ios">
     <config-file target="*-Info.plist" parent="CFBundleURLTypes">
       <array>
@@ -33,13 +33,12 @@
 
   <!-- android -->
   <platform name="android">
-    <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
+    <config-file target="AndroidManifest.xml" parent="/*/application/activity">
       <intent-filter>
-        <!-- TODO check ibmobile-ideal intent for correct actions and categories -->
+        <data android:scheme="$PACKAGE_NAME"/>
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
-        <data android:scheme="$PACKAGE_NAME" />
       </intent-filter>
     </config-file>
   </platform>
