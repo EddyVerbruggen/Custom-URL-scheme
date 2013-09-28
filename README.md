@@ -1,4 +1,5 @@
-# LaunchMyApp (by URL) PhoneGap Plugin
+# LaunchMyApp PhoneGap (Build) Plugin
+### my.package.name://somepage
 for iOS and Android, by [Eddy Verbruggen](http://www.x-services.nl)
 
 1. [Description](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#1-description)
@@ -170,3 +171,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/EddyVerbruggen/launchmyapp-phonegap-plugin/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
