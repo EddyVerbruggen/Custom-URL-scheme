@@ -11,19 +11,19 @@ for iOS and Android, by [Eddy Verbruggen](http://www.x-services.nl)
 
 ## 1. Description
 
-This plugin allows you to start your app by calling it with a URL like my.package.name://path?foo=bar
+This plugin allows you to start your app by calling it with a URL like `my.package.name://path?foo=bar`
 
 * Compatible with [Cordova Plugman](https://github.com/apache/cordova-plugman)
 * Submitted and waiting for approval at PhoneGap Build ([more information](https://build.phonegap.com/plugins))
 
 ### iOS specifics
-* Yes, you could [use `config.xml` to defined a custom URL scheme](https://build.phonegap.com/docs/config-xml#url_schemes). This plugin adds 2 enhancements though:
-  - Uniform URL scheme with Android (for which the mention URL scheme does not work).
-  - You still need to wire up the Javascript code to handle incoming events. This plugin assists you with that.
+* Yes, you could [use config.xml to define a URL scheme](https://build.phonegap.com/docs/config-xml#url_schemes). This plugin adds 2 enhancements though:
+  - Uniform URL scheme with Android (for which there is no option to define a URL scheme via PhoneGap configuration).
+  - You still need to wire up the Javascript to handle incoming events. This plugin assists you with that.
 * Tested on iOS 5.1 and 7.0.
 
 ### Android specifics
-* Unlike iOS, there is no way to use `config.xml` to define a scheme for your app. Now there is.
+* Unlike iOS, there is no way to use config.xml to define a scheme for your app. Now there is.
 * Tested on Android 4.3, will most likely work with 2.2 and up.
 
 
@@ -46,20 +46,20 @@ Then Reference the JavaScript code in your `index.html`:
 <script src="js/plugins/LaunchMyApp.js"></script>
 ```
 
-Please note for iOS: there is a bug in Plugman (will be solved soon) which causes some error in your *-Info.plist. Please repair after installing this plugin:
-- Manually remove the blank line and whitespace from NSMainNibFile and NSMainNibFile~ipad (or your app won't start at all).
-- You can also remove the duplicated CFBundleURLSchemes key (but it does no harm).
+Please note for iOS: there is a bug in Plugman (will be solved soon) which causes some error in your `*-Info.plist`. Please repair after installing this plugin:
+- Manually remove the blank line and whitespace from `NSMainNibFile` and `NSMainNibFile~ipad` (or your app won't start at all).
+- You can also remove the duplicated `CFBundleURLSchemes` key (but it does no harm).
 
 
 ### Manually
 
 #### iOS
-1\. Copy www/ios/LaunchMyApp.js to www/js/plugins/LaunchMyApp.js and reference it in your `index.html`:
+1\. `Copy www/ios/LaunchMyApp.js` to `www/js/plugins/LaunchMyApp.js` and reference it in your `index.html`:
 ```html
 <script type="text/javascript" src="js/plugins/LaunchMyApp.js"></script>
 ```
 
-2\. Add the following to your `*-Info.plist` replace `your.bundle.name` by the value you see at `CFBundleIdentifier`:
+2\. Add this to your `*-Info.plist` (replace `your.bundle.name` by the value at `CFBundleIdentifier`):
 ```xml
 <key>CFBundleURLTypes</key>
 <array>
