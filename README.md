@@ -2,7 +2,14 @@
 
 by [Eddy Verbruggen](http://www.x-services.nl)
 
-TODO include js example
+TODO include js example:
+            function handleOpenURL(url) {
+                setTimeout(function() {
+                    alert('received url: ' + url);
+                }, 0);
+            }
+
+TODO note that apps with dash in package will have a different scheme on android
 
 1. [Description](https://github.com/EddyVerbruggen/iPadLandscapeEnabler-PhoneGapBuild-Plugin#1-description)
 2. [Installation](https://github.com/EddyVerbruggen/iPadLandscapeEnabler-PhoneGapBuild-Plugin#2-installation)
