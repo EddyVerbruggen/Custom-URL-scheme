@@ -1,5 +1,5 @@
 # LaunchMyApp PhoneGap (Build) Plugin
-### my.package.name://somepage
+#### launch your app by a link like this: my.package.name://somepage
 for iOS and Android, by [Eddy Verbruggen](http://www.x-services.nl)
 
 1. [Description](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#1-description)
