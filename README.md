@@ -18,8 +18,8 @@ This plugin allows you to start your app by calling it with a URL like `my.packa
 * Submitted and waiting for approval at PhoneGap Build ([more information](https://build.phonegap.com/plugins))
 
 ### iOS specifics
-* Yes, you could [use config.xml to define a URL scheme](https://build.phonegap.com/docs/config-xml#url_schemes). This plugin adds 2 enhancements though:
-  - Uniform URL scheme with Android (for which there is no option to define a URL scheme via PhoneGap configuration).
+* Forget about [using config.xml to define a URL scheme](https://build.phonegap.com/docs/config-xml#url_schemes). This plugin adds 2 essential enhancements:
+  - Uniform URL scheme with Android (for which there is no option to define a URL scheme via PhoneGap configuration at all).
   - You still need to wire up the Javascript to handle incoming events. This plugin assists you with that.
 * Tested on iOS 5.1 and 7.0.
 
