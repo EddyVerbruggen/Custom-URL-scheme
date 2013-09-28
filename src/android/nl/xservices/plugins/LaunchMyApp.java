@@ -15,8 +15,9 @@ public class LaunchMyApp extends CordovaPlugin {
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
     if (ACTION_CHECKINTENT.equalsIgnoreCase(action)) {
+      final String packagename = this.webView.getContext().getPackageName().toLowerCase();
       final Intent intent = ((DroidGap) this.webView.getContext()).getIntent();
-      if (intent.getDataString().startsWith("launchmyapp://")) {
+      if (intent.getDataString() != null && intent.getDataString().startsWith(packagename + "://")) {
         callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, intent.getDataString()));
         return true;
       } else {

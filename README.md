@@ -3,13 +3,13 @@
 by [Eddy Verbruggen](http://www.x-services.nl)
 
 TODO include js example:
-            function handleOpenURL(url) {
-                setTimeout(function() {
-                    alert('received url: ' + url);
-                }, 0);
-            }
+  function handleOpenURL(url) {
+    alert("received url: " + url);
+  }
 
 TODO note that apps with dash in package will have a different scheme on android
+TODO note that apps with uppercase characters in the packagename will not work with this plugin
+TODO note for non-build users: there is a bug in plugman where plist is messed up.. manually remove whitespace from
 
 1. [Description](https://github.com/EddyVerbruggen/iPadLandscapeEnabler-PhoneGapBuild-Plugin#1-description)
 2. [Installation](https://github.com/EddyVerbruggen/iPadLandscapeEnabler-PhoneGapBuild-Plugin#2-installation)
