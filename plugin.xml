@@ -7,8 +7,8 @@
   <name>Launch my App</name>
 
   <description>
-    Launch your app by using this URL:  my.package.name://anything
-    You can even pass params like this: my.package.name://?foo=bar
+    Launch your app by using this URL:  launchmyapp://my.package.name/somepath
+    You can even pass params like this: launchmyapp://my.package.name/someotherpath?foo=bar
   </description>
 
   <license>MIT</license>
@@ -17,16 +17,19 @@
     <engine name="cordova" version=">=2.5.0"/>
   </engines>
 
-  <asset src="www/LaunchMyApp.js" target="js/plugins/LaunchMyApp.js"/>
 
-  <!-- ios (finished impl) -->
+  <!-- ios -->
   <platform name="ios">
+    <asset src="www/ios/LaunchMyApp.js" target="js/plugins/LaunchMyApp.js"/>
+
     <config-file target="*-Info.plist" parent="CFBundleURLTypes">
       <array>
         <dict>
+          <key>CFBundleURLName</key>
+          <string>$PACKAGE_NAME</string>
           <key>CFBundleURLSchemes</key>
           <array>
-            <string>$PACKAGE_NAME</string>
+            <string>launchmyapp</string>
           </array>
         </dict>
       </array>
@@ -35,6 +38,8 @@
 
   <!-- android -->
   <platform name="android">
+    <asset src="www/android/LaunchMyApp.js" target="js/plugins/LaunchMyApp.js"/>
+
     <config-file target="res/xml/config.xml" parent="plugins">
       <plugin name="LaunchMyApp" value="nl.xservices.plugins.LaunchMyApp"/>
     </config-file>
@@ -43,7 +48,7 @@
 
     <config-file target="AndroidManifest.xml" parent="/*/application/activity">
       <intent-filter>
-        <data android:scheme="$PACKAGE_NAME"/>
+        <data android:scheme="launchmyapp" android:host="$PACKAGE_NAME" />
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
