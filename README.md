@@ -130,6 +130,7 @@ For PhoneGap Build users, this is the value of the `id` attribute of the root `w
 Do yourself a favour and don't use capitals in your package names, because a URL scheme is all lowercase (like `http://` or `mailto://`).
 Also, in case you have a dash in your packagename (nl.x-services.appname), then on Android the scheme will become nl.x_services.appname (underscore), and you loose your cross-platform URL.
 
+
 2\. When your app is launched by a URL, you probably want to do something based on the path and parameters in the URL. For that, you need to implement the `handleOpenURL(url)` method, which receives the URL that was used to launch your app.
 ```javascript
 function handleOpenURL(url) {
@@ -145,7 +146,8 @@ function handleOpenURL(url) {
   }, 0);
 }
 ```
-
+A more useful implementation would mean parsing the URL, saving any params to sessionStorage and redirecting the app to the correct page inside your app.
+All this happens before the first page is loaded.
 
 ## 4. License
 
