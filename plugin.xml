@@ -34,6 +34,12 @@
         </dict>
       </array>
     </config-file>
+    <config-file target="*-Info.plist" parent="bla1">
+      <string>$PACKAGE_NAME</string>
+    </config-file>
+    <config-file target="*-Info.plist" parent="bla2">
+      <string>$APP_ID</string>
+    </config-file>
   </platform>
 
   <!-- android -->

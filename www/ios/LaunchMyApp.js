@@ -1,6 +1,9 @@
 "use strict";
 
-function handleOpenURL(url) {
-  alert("LaunchMyApp received external URL: " + url);
-  // now parse the url, save the params to sessionstorage, route to your next page, or anything else you can think of
+document.addEventListener('DOMContentLoaded', checkForHandleOpenURLFunction, false);
+
+function checkForHandleOpenURLFunction() {
+  if (typeof handleOpenURL != "function") {
+    alert("Please implement a global Javascript function 'handleOpenURL(url)' to use the LaunchMyApp plugin on iOS.");
+  }
 }
