@@ -2,13 +2,13 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="nl.x-services.plugins.launchmyapp"
-        version="1.0">
+        version="1.1">
 
-  <name>Launch my App</name>
+  <name>Launch My App</name>
 
   <description>
-    Launch your app by using this URL:  URL_SCHEME://somepath
-    You can even pass params like this: URL_SCHEME://someotherpath?foo=bar
+    Launch your app by using this URL:  mycoolapp://
+    You can add a path and even pass params like this: mycoolapp://somepath?foo=bar
     (You can choose your own string for URL_SCHEME)
   </description>
 
@@ -19,7 +19,6 @@
   <engines>
     <engine name="cordova" version=">=2.5.0"/>
   </engines>
-
 
   <!-- ios -->
   <platform name="ios">

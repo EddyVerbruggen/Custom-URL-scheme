@@ -8,7 +8,8 @@ for iOS and Android, by [Eddy Verbruggen](http://www.x-services.nl)
 	2. [Manually](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#manually)
 	2. [PhoneGap Build](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#phonegap-build)
 3. [Usage](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#3-usage)
-4. [License](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#4-license)
+4. [URL Scheme hints](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#4-url-scheme-hints)
+5. [License](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#5-license)
 
 ## 1. Description
 
@@ -143,7 +144,18 @@ function handleOpenURL(url) {
 A more useful implementation would mean parsing the URL, saving any params to sessionStorage and redirecting the app to the correct page inside your app.
 All this happens before the first page is loaded.
 
-## 4. License
+
+## 4. URL Scheme hints
+Please choose a URL_SCHEME which which complies to these restrictions:
+- Don't use an already registered scheme (like fb, twitter, comgooglemaps, etc).
+- Use only lowercase characters.
+- Don't use a dash `-` because on Android it will become underscore `_`.
+- Use only 1 word (no spaces).
+
+TIP: test your scheme by installing the app on a device or simulator and typing yourscheme:// in the browser URL bar.
+
+
+## 5. License
 
 [The MIT License (MIT)](http://www.opensource.org/licenses/mit-license.html)
 
