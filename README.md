@@ -32,6 +32,7 @@ This plugin allows you to start your app by calling it with a URL like `mycoolap
 
 ### Automatically (CLI / Plugman)
 LaunchMyApp is compatible with [Cordova Plugman](https://github.com/apache/cordova-plugman).
+Replace `URL_SCHEME` by a nice scheme you want to have your app listen to, like `mycoolapp`:
 
 ```
 $ phonegap local plugin add https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin.git --variable URL_SCHEME=mycoolapp
@@ -41,7 +42,7 @@ or
 $ cordova plugin add https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin.git --variable URL_SCHEME=mycoolapp
 ```
 
-Then Reference the JavaScript code in your `index.html`:
+Then reference the JavaScript code in your `index.html`:
 ```html
 <!-- below <script src="phonegap.js"></script> -->
 <script src="js/plugins/LaunchMyApp.js"></script>
