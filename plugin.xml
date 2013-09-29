@@ -7,11 +7,14 @@
   <name>Launch my App</name>
 
   <description>
-    Launch your app by using this URL:  my.package.name://somepath
-    You can even pass params like this: my.package.name://someotherpath?foo=bar
+    Launch your app by using this URL:  URL_SCHEME://somepath
+    You can even pass params like this: URL_SCHEME://someotherpath?foo=bar
+    (You can choose your own string for URL_SCHEME)
   </description>
 
   <license>MIT</license>
+
+  <preference name="URL_SCHEME" />
 
   <engines>
     <engine name="cordova" version=">=2.5.0"/>
@@ -27,7 +30,7 @@
         <dict>
           <key>CFBundleURLSchemes</key>
           <array>
-            <string>$PACKAGE_NAME</string>
+            <string>$URL_SCHEME</string>
           </array>
         </dict>
       </array>
@@ -46,7 +49,7 @@
 
     <config-file target="AndroidManifest.xml" parent="/*/application/activity">
       <intent-filter>
-        <data android:scheme="$PACKAGE_NAME"/>
+        <data android:scheme="$URL_SCHEME"/>
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />

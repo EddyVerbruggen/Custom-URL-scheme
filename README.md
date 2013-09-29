@@ -1,5 +1,5 @@
 # LaunchMyApp PhoneGap (Build) Plugin
-#### launch your app by a link like this: my.package.name://somepage
+#### launch your app by a link like this: `mycoolapp://`
 for iOS and Android, by [Eddy Verbruggen](http://www.x-services.nl)
 
 1. [Description](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#1-description)
@@ -12,7 +12,7 @@ for iOS and Android, by [Eddy Verbruggen](http://www.x-services.nl)
 
 ## 1. Description
 
-This plugin allows you to start your app by calling it with a URL like `my.package.name://path?foo=bar`
+This plugin allows you to start your app by calling it with a URL like `appurl://path?foo=bar`
 
 * Compatible with [Cordova Plugman](https://github.com/apache/cordova-plugman)
 * Submitted and waiting for approval at PhoneGap Build ([more information](https://build.phonegap.com/plugins))
@@ -34,11 +34,11 @@ This plugin allows you to start your app by calling it with a URL like `my.packa
 LaunchMyApp is compatible with [Cordova Plugman](https://github.com/apache/cordova-plugman).
 
 ```
-$ phonegap local plugin add https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin.git
+$ phonegap local plugin add https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin.git --variable URL_SCHEME=myappscheme
 ```
 or
 ```
-$ cordova plugin add https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin.git
+$ cordova plugin add https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin.git --variable URL_SCHEME=mycoolapp
 ```
 
 Then Reference the JavaScript code in your `index.html`:
@@ -47,9 +47,8 @@ Then Reference the JavaScript code in your `index.html`:
 <script src="js/plugins/LaunchMyApp.js"></script>
 ```
 
-Please note for iOS: there is a bug in Plugman (will be solved soon) which causes some error in your `*-Info.plist`. Please repair after installing this plugin:
-- Manually remove the blank line and whitespace from `NSMainNibFile` and `NSMainNibFile~ipad` (or your app won't start at all).
-- You can also remove the duplicated `CFBundleURLSchemes` key (but it does no harm).
+Please note for iOS: there is a bug in Plugman (will be solved soon) which causes an error in your `*-Info.plist`.
+Please manually remove the blank line and whitespace from `NSMainNibFile` and `NSMainNibFile~ipad` (or your app won't start at all).
 
 
 ### Manually
@@ -60,14 +59,14 @@ Please note for iOS: there is a bug in Plugman (will be solved soon) which cause
 <script type="text/javascript" src="js/plugins/LaunchMyApp.js"></script>
 ```
 
-2\. Add this to your `*-Info.plist` (replace `your.bundle.name` by the value at `CFBundleIdentifier`):
+2\. Add this to your `*-Info.plist` (replace `URL_SCHEME` by a nice scheme you want to have your app listen to, like `mycoolapp`):
 ```xml
 <key>CFBundleURLTypes</key>
 <array>
   <dict>
     <key>CFBundleURLSchemes</key>
     <array>
-      <string>your.bundle.name</string>
+      <string>myappscheme</string>
     </array>
   </dict>
 </array>
@@ -86,10 +85,10 @@ Please note for iOS: there is a bug in Plugman (will be solved soon) which cause
 
 3\. Copy `LaunchMyApp.java` to `platforms/android/src/nl/xservices/plugins` (create the folders)
 
-4\. Add the following to your `AndroidManifest.xml` inside the `/manifest/application/activity` node (replace `your.package.name` by the `package` attribute of the root `manifest` node):
+4\. Add the following to your `AndroidManifest.xml` inside the `/manifest/application/activity` node (replace `URL_SCHEME` by a nice scheme you want to have your app listen to, like `mycoolapp`):
 ```xml
 <intent-filter>
-  <data android:scheme="your.package.name"/>
+  <data android:scheme="URL_SCHEME"/>
   <action android:name="android.intent.action.VIEW" />
   <category android:name="android.intent.category.DEFAULT" />
   <category android:name="android.intent.category.BROWSABLE" />
@@ -100,13 +99,11 @@ Please note for iOS: there is a bug in Plugman (will be solved soon) which cause
 
 Using LaunchMyApp with PhoneGap Build requires these simple steps:
 
-1\. Add the following xml to your `config.xml` to always use the latest version of this plugin:
+1\. Add the following xml to your `config.xml` to use the latest version of this plugin (replace `URL_SCHEME` by a nice scheme you want to have your app listen to, like `mycoolapp`):
 ```xml
-<gap:plugin name="nl.x-services.plugins.launchmyapp" />
-```
-or to use this exact version:
-```xml
-<gap:plugin name="nl.x-services.plugins.launchmyapp" version="1.0" />
+<gap:plugin name="nl.x-services.plugins.launchmyapp">
+  <param:name="URL_SCHEME" value="mycoolapp" />
+</gap:plugin>
 ```
 
 2\. Reference the JavaScript code in your `index.html`:
@@ -117,20 +114,15 @@ or to use this exact version:
 
 ## 3. Usage
 
-1\. Your app can be launced by linking to it like this (all lines work):
+1\. Your app can be launced by linking to it like this (all of these will work):
 ```html
-<a href="your.package.name://">Open my app</a>
-<a href="your.package.name://somepath">Open my app</a>
-<a href="your.package.name://somepath?foo=bar">Open my app</a>
-<a href="your.package.name://?foo=bar">Open my app</a>
+<a href="mycoolapp://">Open my app</a>
+<a href="mycoolapp://somepath">Open my app</a>
+<a href="mycoolapp://somepath?foo=bar">Open my app</a>
+<a href="mycoolapp://?foo=bar">Open my app</a>
 ```
 
-`your.package.name` is the one you used while installing this plugin.
-For PhoneGap Build users, this is the value of the `id` attribute of the root `widget` node in your `config.xml`.
-
-Do yourself a favour and don't use capitals in your package names, because a URL scheme is all lowercase (like `http://` or `mailto://`).
-Also, in case you have a dash in your packagename (nl.x-services.appname), then on Android the scheme will become nl.x_services.appname (underscore), and you loose your cross-platform URL.
-
+`mycoolapp` is the value of URL_SCHEME you used while installing this plugin.
 
 2\. When your app is launched by a URL, you probably want to do something based on the path and parameters in the URL. For that, you need to implement the `handleOpenURL(url)` method, which receives the URL that was used to launch your app.
 ```javascript
