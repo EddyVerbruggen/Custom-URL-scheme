@@ -126,7 +126,7 @@ Using LaunchMyApp with PhoneGap Build requires these simple steps:
 
 `mycoolapp` is the value of URL_SCHEME you used while installing this plugin.
 
-2\. When your app is launched by a URL, you probably want to do something based on the path and parameters in the URL. For that, you need to implement the `handleOpenURL(url)` method, which receives the URL that was used to launch your app.
+2\. When your app is launched by a URL, you probably want to do something based on the path and parameters in the URL. For that, you could implement the (optional) `handleOpenURL(url)` method, which receives the URL that was used to launch your app.
 ```javascript
 function handleOpenURL(url) {
   console.log("received url: " + url);
