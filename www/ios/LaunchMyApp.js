@@ -1,10 +1,6 @@
 "use strict";
 
-document.addEventListener(
-    "deviceready",
-    function() {
-      if (typeof handleOpenURL != "function") {
-        alert("Please implement a global Javascript function 'handleOpenURL(url)' to use the LaunchMyApp plugin on iOS.");
-      }
-    },
-    false);
+// Q: Why an empty file?
+// A: iOS doesn't need plumbing to get the plugin to work.
+//    including no file would mean the import in index.html would differ per platform.
+//    Also, using one version and adding a userAgent check for Android feels wrong.
