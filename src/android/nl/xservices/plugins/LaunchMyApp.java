@@ -1,8 +1,8 @@
 package nl.xservices.plugins;
 
 import android.content.Intent;
-import org.apache.cordova.DroidGap;
 import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaActivity;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
@@ -15,7 +15,7 @@ public class LaunchMyApp extends CordovaPlugin {
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
     if (ACTION_CHECKINTENT.equalsIgnoreCase(action)) {
-      final Intent intent = ((DroidGap) this.webView.getContext()).getIntent();
+      final Intent intent = ((CordovaActivity) this.webView.getContext()).getIntent();
       if (intent.getDataString() != null) {
         callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, intent.getDataString()));
         return true;
