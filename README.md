@@ -1,6 +1,6 @@
 # LaunchMyApp PhoneGap (Build) Plugin
 #### launch your app by a link like this: `mycoolapp://`
-for iOS and Android, by [Eddy Verbruggen](http://www.x-services.nl)
+for PhoneGap 2.9.0 and lower, iOS and Android, by [Eddy Verbruggen](http://www.x-services.nl)
 
 1. [Description](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#1-description)
 2. [Installation](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#2-installation)
