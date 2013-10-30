@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="nl.x-services.plugins.launchmyapp"
-        version="1.2">
+        version="3.0">
 
   <name>Launch My App</name>
 
@@ -17,7 +17,7 @@
   <preference name="URL_SCHEME" />
 
   <engines>
-    <engine name="cordova" version=">=2.5.0"/>
+    <engine name="cordova" version=">=3.0.0"/>
   </engines>
 
   <!-- ios -->
@@ -40,8 +40,10 @@
   <platform name="android">
     <asset src="www/android/LaunchMyApp.js" target="js/plugins/LaunchMyApp.js"/>
 
-    <config-file target="res/xml/config.xml" parent="plugins">
-      <plugin name="LaunchMyApp" value="nl.xservices.plugins.LaunchMyApp"/>
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="LaunchMyApp">
+        <param name="android-package" value="nl.xservices.plugins.LaunchMyApp"/>
+      </feature>
     </config-file>
 
     <source-file src="src/android/nl/xservices/plugins/LaunchMyApp.java" target-dir="src/nl/xservices/plugins"/>
