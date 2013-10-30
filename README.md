@@ -51,8 +51,8 @@ Then reference the JavaScript code in your `index.html`:
 <script src="js/plugins/LaunchMyApp.js"></script>
 ```
 
-Please note for iOS: there is a bug in Plugman (will be solved soon) which causes an error in your `*-Info.plist`.
-Please manually remove the blank line and whitespace from `NSMainNibFile` and `NSMainNibFile~ipad` (or your app won't start at all).
+Please note for iOS: there was a recent bug in CLI which caused an error in your `*-Info.plist`.
+Please manually remove the blank line and whitespace (if any) from `NSMainNibFile` and `NSMainNibFile~ipad` (or your app won't start at all).
 
 
 ### Manually
@@ -149,12 +149,12 @@ All this happens before the first page is loaded.
 
 ## 4. URL Scheme hints
 Please choose a URL_SCHEME which which complies to these restrictions:
-- Don't use an already registered scheme (like fb, twitter, comgooglemaps, etc).
+- Don't use an already registered scheme (like `fb`, `twitter`, `comgooglemaps`, etc).
 - Use only lowercase characters.
 - Don't use a dash `-` because on Android it will become underscore `_`.
 - Use only 1 word (no spaces).
 
-TIP: test your scheme by installing the app on a device or simulator and typing yourscheme:// in the browser URL bar.
+TIP: test your scheme by installing the app on a device or simulator and typing yourscheme:// in the browser URL bar, or create a test HTML page with a link to your app to impress your buddies.
 
 
 ## 5. License
