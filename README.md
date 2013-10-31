@@ -106,7 +106,7 @@ Using LaunchMyApp with PhoneGap Build requires these simple steps:
 1\. Add the following xml to your `config.xml` to use the latest version of this plugin (replace `mycoolapp` by a nice scheme you want to have your app listen to):
 ```xml
 <gap:plugin name="nl.x-services.plugins.launchmyapp">
-  <param:name="URL_SCHEME" value="mycoolapp" />
+  <param name="URL_SCHEME" value="mycoolapp" />
 </gap:plugin>
 ```
 
