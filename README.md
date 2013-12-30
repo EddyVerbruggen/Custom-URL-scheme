@@ -36,10 +36,6 @@ LaunchMyApp is compatible with [Cordova Plugman](https://github.com/apache/cordo
 Replace `mycoolapp` by a nice scheme you want to have your app listen to:
 
 ```
-$ phonegap local plugin add https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin.git --variable URL_SCHEME=mycoolapp
-```
-or
-```
 $ cordova plugin add https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin.git --variable URL_SCHEME=mycoolapp
 ```
 
