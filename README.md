@@ -40,6 +40,7 @@ Replace `mycoolapp` by a nice scheme you want to have your app listen to:
 ```
 $ cordova plugin add https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin.git --variable URL_SCHEME=mycoolapp
 ```
+(note that the phonegap cli doesn't accept variables, so please use the cordova cli as shown above)
 
 Then reference the JavaScript code in your `index.html`:
 ```html
