@@ -115,7 +115,7 @@ Using LaunchMyApp with PhoneGap Build requires these simple steps:
 
 ## 3. Usage
 
-1\. Your app can be launced by linking to it like this (all of these will work):
+1a\. Your app can be launced by linking to it like this from a website or an email for example (all of these will work):
 ```html
 <a href="mycoolapp://">Open my app</a>
 <a href="mycoolapp://somepath">Open my app</a>
@@ -124,6 +124,11 @@ Using LaunchMyApp with PhoneGap Build requires these simple steps:
 ```
 
 `mycoolapp` is the value of URL_SCHEME you used while installing this plugin.
+
+1b\. If you're trying to open your app from another PhoneGap app, use the InAppBrowser plugin and launch the receiving app like this, to avoid a 'protocol not supported' error:
+```html
+<button onclick="window.open('mycoolapp://', '_system')">Open the other app</button>
+```
 
 2\. When your app is launched by a URL, you probably want to do something based on the path and parameters in the URL. For that, you could implement the (optional) `handleOpenURL(url)` method, which receives the URL that was used to launch your app.
 ```javascript
