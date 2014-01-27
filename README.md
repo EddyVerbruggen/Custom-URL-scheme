@@ -1,4 +1,4 @@
-# Custom URL scheme PhoneGap (Build) Plugin
+# Custom URL scheme PhoneGap Plugin
 #### launch your app by a link like this: `mycoolapp://`
 for iOS and Android, by [Eddy Verbruggen](http://www.x-services.nl)
 - This repo is for PhoneGap 3.0.0 and up
@@ -42,13 +42,9 @@ $ cordova plugin add https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plug
 ```
 (note that the phonegap cli doesn't accept variables, so please use the cordova cli as shown above)
 
-Then reference the JavaScript code in your `index.html`:
-```html
-<!-- below <script src="phonegap.js"></script> -->
-<script src="js/plugins/LaunchMyApp.js"></script>
-```
+The LaunchMyApp.js file is brought in automatically.
 
-Please note for iOS: there was a recent bug in CLI which caused an error in your `*-Info.plist`.
+Note for iOS: there was a bug in CLI which caused an error in your `*-Info.plist`.
 Please manually remove the blank line and whitespace (if any) from `NSMainNibFile` and `NSMainNibFile~ipad` (or your app won't start at all).
 
 
@@ -98,20 +94,14 @@ Please manually remove the blank line and whitespace (if any) from `NSMainNibFil
 
 ### PhoneGap Build
 
-Using LaunchMyApp with PhoneGap Build requires these simple steps:
-
-1\. Add the following xml to your `config.xml` to use the latest version of this plugin (replace `mycoolapp` by a nice scheme you want to have your app listen to):
+Using LaunchMyApp with PhoneGap Build requires you to add the following xml to your `config.xml` to use the latest version of this plugin (replace `mycoolapp` by a nice scheme you want to have your app listen to):
 ```xml
 <gap:plugin name="nl.x-services.plugins.launchmyapp">
   <param name="URL_SCHEME" value="mycoolapp" />
 </gap:plugin>
 ```
 
-2\. Reference the JavaScript code in your `index.html`:
-```html
-<!-- below <script src="phonegap.js"></script> -->
-<script src="js/plugins/LaunchMyApp.js"></script>
-```
+The LaunchMyApp.js file is brought in automatically.
 
 ## 3. Usage
 
