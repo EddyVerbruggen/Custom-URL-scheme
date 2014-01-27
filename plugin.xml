@@ -2,14 +2,13 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="nl.x-services.plugins.launchmyapp"
-        version="3.0">
+        version="3.1">
 
-  <name>Launch My App</name>
+  <name>Custom URL scheme</name>
 
   <description>
     Launch your app by using this URL:  mycoolapp://
-    You can add a path and even pass params like this: mycoolapp://somepath?foo=bar
-    (You can choose your own string for URL_SCHEME)
+    You can add a path and even pass params like this: mycoolerapp://somepath?foo=bar
   </description>
 
   <license>MIT</license>
@@ -22,7 +21,9 @@
 
   <!-- ios -->
   <platform name="ios">
-    <asset src="www/ios/LaunchMyApp.js" target="js/plugins/LaunchMyApp.js"/>
+    <js-module src="www/ios/LaunchMyApp.js" name="LaunchMyApp">
+      <clobbers target="window.plugins.launchmyapp" />
+    </js-module>
 
     <config-file target="*-Info.plist" parent="CFBundleURLTypes">
       <array>
@@ -38,7 +39,9 @@
 
   <!-- android -->
   <platform name="android">
-    <asset src="www/android/LaunchMyApp.js" target="js/plugins/LaunchMyApp.js"/>
+    <js-module src="www/android/LaunchMyApp.js" name="LaunchMyApp">
+      <clobbers target="window.plugins.launchmyapp" />
+    </js-module>
 
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="LaunchMyApp">

@@ -8,7 +8,7 @@
               "LaunchMyApp",
               "checkIntent",
               []);
-    };
+    }
     
     document.addEventListener("deviceready", triggerOpenURL, false);
     document.addEventListener("resume", triggerOpenURL, false);
