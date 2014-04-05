@@ -15,11 +15,12 @@
   <license>MIT</license>
 
   <preference name="URL_SCHEME" />
+<!--
   <preference name="HTTP_HOST" />
   <preference name="HTTP_PATHPREFIX" />
   <preference name="HTTPS_HOST" />
   <preference name="HTTPS_PATHPREFIX" />
-
+-->
   <engines>
     <engine name="cordova" version=">=3.0.0"/>
   </engines>
@@ -59,8 +60,10 @@
     <config-file target="AndroidManifest.xml" parent="/*/application/activity">
       <intent-filter>
         <data android:scheme="$URL_SCHEME"/>
+<!--
         <data android:scheme="http" android:host="$HTTP_HOST" android:pathPrefix="$HTTP_PATHPREFIX"/>
         <data android:scheme="https" android:host="$HTTPS_HOST" android:pathPrefix="$HTTPS_PATHPREFIX"/>
+-->
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
