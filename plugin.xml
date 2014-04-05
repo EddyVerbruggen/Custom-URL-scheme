@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="com.machenmusik.plugins.launchmyapp"
-        version="3.1.2">
+        version="3.1.2-mac">
 
   <name>Custom URL scheme</name>
 
@@ -30,7 +30,7 @@
       <clobbers target="window.plugins.launchmyapp" />
     </js-module>
 
-    <config-file target="*-Info.plist" parent="CFBundleURLTypes">
+    <config-file target="*-Info.plist" parent="CFBundleURLTypes" overwrite="true">
       <array>
         <dict>
           <key>CFBundleURLSchemes</key>
