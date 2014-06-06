@@ -29,4 +29,11 @@ public class LaunchMyApp extends CordovaPlugin {
       return false;
     }
   }
+
+  @Override
+  public void onNewIntent(Intent intent)
+  {
+    String intentString = intent.getDataString();
+    webView.loadUrl("javascript:handleOpenURL('"+intentString+"');");
+  }
 }
