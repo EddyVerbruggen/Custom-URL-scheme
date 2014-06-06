@@ -9,7 +9,6 @@
               "checkIntent",
               []);
     }
-    
-    document.addEventListener("deviceready", triggerOpenURL, false);
-    document.addEventListener("resume", triggerOpenURL, false);
+
+  document.addEventListener("deviceready", triggerOpenURL, false);
 }());

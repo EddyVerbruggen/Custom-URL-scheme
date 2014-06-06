@@ -138,12 +138,6 @@ function handleOpenURL(url) {
 A more useful implementation would mean parsing the URL, saving any params to sessionStorage and redirecting the app to the correct page inside your app.
 All this happens before the first page is loaded.
 
-### Android Quirck
-When the launchMode of your activity in AndroidManifest.xml is 'singleTask', your app does start via the URL scheme, but it will not receive any parameters. To work around this, change the launchMode (duh), or add this anywhere in your app: 
-```javascript
-document.addEventListener("pause", function(){navigator.app.exitApp()}, false);
-```
-
 ## 4. URL Scheme hints
 Please choose a URL_SCHEME which which complies to these restrictions:
 - Don't use an already registered scheme (like `fb`, `twitter`, `comgooglemaps`, etc).

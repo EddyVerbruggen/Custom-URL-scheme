@@ -31,9 +31,11 @@ public class LaunchMyApp extends CordovaPlugin {
   }
 
   @Override
-  public void onNewIntent(Intent intent)
-  {
-    String intentString = intent.getDataString();
-    webView.loadUrl("javascript:handleOpenURL('"+intentString+"');");
+  public void onNewIntent(Intent intent) {
+    final String intentString = intent.getDataString();
+    if (intent.getDataString() != null) {
+      intent.setData(null);
+      webView.loadUrl("javascript:handleOpenURL('" + intentString + "');");
+    }
   }
 }
