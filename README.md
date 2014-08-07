@@ -92,6 +92,8 @@ Please manually remove the blank line and whitespace (if any) from `NSMainNibFil
 </intent-filter>
 ```
 
+5\. In `AndroidManifest.xml` set the launchMode to singleTask to avoid issues like [#24]. `<activity android:launchMode="singleTask" ..`
+
 ### PhoneGap Build
 
 Using LaunchMyApp with PhoneGap Build requires you to add the following xml to your `config.xml` to use the latest version of this plugin (replace `mycoolapp` by a nice scheme you want to have your app listen to):
