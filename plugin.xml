@@ -69,7 +69,7 @@
       </Extension>
     </config-file>
     
-    <js-module src="src/windows/LaunchMyApp.js" name="LaunchMyApp">
+    <js-module src="www/windows/LaunchMyApp.js" name="LaunchMyApp">
       <clobbers target="window.plugins.launchmyapp" />
     </js-module>
   </platform>
@@ -91,8 +91,7 @@
         <Protocol Name="$URL_SCHEME" />
       </Extension>
     </config-file>
-      
-    <js-module src="src/windows/LaunchMyApp.js" name="LaunchMyApp">
+    <js-module src="www/windows/LaunchMyApp.js" name="LaunchMyApp">
       <clobbers target="window.plugins.launchmyapp" />
     </js-module>
   </platform>
