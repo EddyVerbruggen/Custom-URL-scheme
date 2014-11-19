@@ -105,6 +105,8 @@ Using LaunchMyApp with PhoneGap Build requires you to add the following xml to y
 
 The LaunchMyApp.js file is brought in automatically.
 
+NOTE: When Hydration is enabled at PGB, this plugin may not work.
+
 ## 3. Usage
 
 1a\. Your app can be launced by linking to it like this from a website or an email for example (all of these will work):
