@@ -40,7 +40,7 @@ Replace `mycoolapp` by a nice scheme you want to have your app listen to:
 ```
 $ cordova plugin add https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin.git --variable URL_SCHEME=mycoolapp
 ```
-(note that the phonegap cli doesn't accept variables, so please use the cordova cli as shown above)
+(Note that the Phonegap CLI didn't support `--variable` before version 3.6.3, so please use the Cordova CLI as shown above in case you're on an older version)
 
 The LaunchMyApp.js file is brought in automatically.
 
