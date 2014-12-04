@@ -23,7 +23,6 @@ public class LaunchMyApp extends CordovaPlugin {
       final Intent intent = ((CordovaActivity) this.webView.getContext()).getIntent();
       if (intent.getDataString() != null) {
         callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, intent.getDataString()));
-        intent.setData(null);
         return true;
       } else {
         callbackContext.error("App was not started via the launchmyapp URL scheme. Ignoring this errorcallback is the best approach.");
@@ -39,7 +38,6 @@ public class LaunchMyApp extends CordovaPlugin {
   public void onNewIntent(Intent intent) {
     final String intentString = intent.getDataString();
     if (intentString != null && intentString.contains("://")) {
-      intent.setData(null);
       try {
         StringWriter writer = new StringWriter(intentString.length() * 2);
         escapeJavaStyleString(writer, intentString, true, false);
