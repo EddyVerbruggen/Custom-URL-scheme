@@ -13,6 +13,9 @@ for iOS and Android, by [Eddy Verbruggen](http://www.x-services.nl)
 4. [URL Scheme hints](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#4-url-scheme-hints)
 5. [License](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#5-license)
 
+
+### BEWARE: [This Apache Cordova issue](https://issues.apache.org/jira/browse/CB-7606) causes problems with Cordova-iOS 3.7.0: the `handleOpenURL` function is not invoked upon cold start. Use Cordova-iOS 3.6.3 or lower for the moment: `cordova platform add ios@3.6.3`
+
 ## 1. Description
 
 This plugin allows you to start your app by calling it with a URL like `mycoolapp://path?foo=bar`
