@@ -14,7 +14,7 @@ for iOS and Android, by [Eddy Verbruggen](http://www.x-services.nl)
 5. [License](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#5-license)
 
 
-### BEWARE: [This Apache Cordova issue](https://issues.apache.org/jira/browse/CB-7606) causes problems with Cordova-iOS 3.7.0: the `handleOpenURL` function is not invoked upon cold start. Use Cordova-iOS 3.6.3 or lower for the moment: `cordova platform add ios@3.6.3`
+### BEWARE: [This Apache Cordova issue](https://issues.apache.org/jira/browse/CB-7606) causes problems with Cordova-iOS 3.7.0: the `handleOpenURL` function is not invoked upon cold start. Use a higher or lower version than 3.7.0.
 
 ## 1. Description
 
