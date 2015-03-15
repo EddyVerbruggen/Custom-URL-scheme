@@ -11,7 +11,15 @@
     You can add a path and even pass params like this: mycoolerapp://somepath?foo=bar
   </description>
 
+  <author>Eddy Verbruggen</author>
+
   <license>MIT</license>
+
+  <keywords>Custom URL Scheme, URLscheme, URL scheme, Custom URL, Launch My App, Launch App</keywords>
+
+  <repo>https://github.com/EddyVerbruggen/Custom-URL-scheme.git</repo>
+
+  <issue>https://github.com/EddyVerbruggen/Custom-URL-scheme/issues</issue>
 
   <preference name="URL_SCHEME" />
 
