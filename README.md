@@ -111,7 +111,7 @@ The LaunchMyApp.js file is brought in automatically.
 NOTE: When Hydration is enabled at PGB, this plugin may not work.
 
 ### Restoring cordova plugin settings on plugin add or update
-In order to be able to restore the plugin settings on `cordova plugin add`, one need to add the following feature into config.xml. Note that if you added the plugin with the `--save` param you will find this in your `config.xml` already, except for the `variable` tag which is likely a `param` tag. [Change that.](#76)
+In order to be able to restore the plugin settings on `cordova plugin add`, one need to add the following feature into config.xml. Note that if you added the plugin with the `--save` param you will find this in your `config.xml` already, except for the `variable` tag which is likely a `param` tag. [Change that.](https://github.com/EddyVerbruggen/Custom-URL-scheme/issues/76)
 ```xml
   <feature name="Custom URL scheme">
     <param name="id" value="nl.x-services.plugins.launchmyapp" />
