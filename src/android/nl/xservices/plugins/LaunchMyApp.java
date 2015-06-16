@@ -38,7 +38,8 @@ public class LaunchMyApp extends CordovaPlugin {
   @Override
   public void onNewIntent(Intent intent) {
     final String intentString = intent.getDataString();
-    if (intentString != null && intentString.contains("://")) {
+    if (intentString != null && intentString.contains("://") &&
+        intent.getScheme() != null && intent.getScheme().contains("://")) {
       intent.setData(null);
       try {
         StringWriter writer = new StringWriter(intentString.length() * 2);
