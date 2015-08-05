@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="nl.x-services.plugins.launchmyapp"
-        version="3.2.5">
+        version="3.2.6">
 
   <name>Custom URL scheme</name>
 
@@ -39,6 +39,7 @@
           <key>CFBundleURLSchemes</key>
           <array>
             <string>$URL_SCHEME</string>
+            <string>gsd-$URL_SCHEME</string>
           </array>
         </dict>
       </array>
