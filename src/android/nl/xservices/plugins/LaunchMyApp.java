@@ -25,11 +25,10 @@ public class LaunchMyApp extends CordovaPlugin {
       if (intentString != null && intentString.contains("://") && intent.getScheme() != null) {
         callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, intent.getDataString()));
         intent.setData(null);
-        return true;
       } else {
         callbackContext.error("App was not started via the launchmyapp URL scheme. Ignoring this errorcallback is the best approach.");
-        return false;
       }
+      return true;
     } else {
       callbackContext.error("This plugin only responds to the " + ACTION_CHECKINTENT + " action.");
       return false;
