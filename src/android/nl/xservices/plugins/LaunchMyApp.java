@@ -22,7 +22,7 @@ public class LaunchMyApp extends CordovaPlugin {
     if (ACTION_CHECKINTENT.equalsIgnoreCase(action)) {
       final Intent intent = ((CordovaActivity) this.webView.getContext()).getIntent();
       final String intentString = intent.getDataString();
-      if (intentString != null && intentString.contains("://") && intent.getScheme() != null) {
+      if (intentString != null && intent.getScheme() != null) {
         callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, intent.getDataString()));
         intent.setData(null);
       } else {
@@ -38,7 +38,7 @@ public class LaunchMyApp extends CordovaPlugin {
   @Override
   public void onNewIntent(Intent intent) {
     final String intentString = intent.getDataString();
-    if (intentString != null && intentString.contains("://") && intent.getScheme() != null) {
+    if (intentString != null && intent.getScheme() != null) {
       intent.setData(null);
       try {
         StringWriter writer = new StringWriter(intentString.length() * 2);
