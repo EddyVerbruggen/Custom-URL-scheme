@@ -16,15 +16,19 @@ import java.util.Locale;
 public class LaunchMyApp extends CordovaPlugin {
 
   private static final String ACTION_CHECKINTENT = "checkIntent";
+  private static final String ACTION_CLEARINTENT = "clearIntent";
 
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-    if (ACTION_CHECKINTENT.equalsIgnoreCase(action)) {
+    if (ACTION_CLEARINTENT.equalsIgnoreCase(action)) {
+      final Intent intent = ((CordovaActivity) this.webView.getContext()).getIntent();
+      intent.setData(null);
+      return true;
+    } else if (ACTION_CHECKINTENT.equalsIgnoreCase(action)) {
       final Intent intent = ((CordovaActivity) this.webView.getContext()).getIntent();
       final String intentString = intent.getDataString();
       if (intentString != null && intent.getScheme() != null) {
         callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, intent.getDataString()));
-        intent.setData(null);
       } else {
         callbackContext.error("App was not started via the launchmyapp URL scheme. Ignoring this errorcallback is the best approach.");
       }
