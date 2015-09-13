@@ -4,10 +4,18 @@
   var remainingAttempts = 10;
 
   function waitForAndCallHandlerFunction(url) {
-    if (typeof window.handleOpenURL == "function") {
+    if (typeof window.handleOpenURL === "function") {
+      // Clear the intent when we have a handler
+      cordova.exec(
+          null,
+          null,
+          "LaunchMyApp",
+          "clearIntent",
+          []);
+
       window.handleOpenURL(url);
     } else if (remainingAttempts-- > 0) {
-      setTimeout(function(){waitForAndCallHandlerFunction(url)}, 500);
+      setTimeout(function(){waitForAndCallHandlerFunction(url);}, 500);
     }
   }
 
