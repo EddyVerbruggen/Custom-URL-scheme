@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="nl.x-services.plugins.launchmyapp"
-        version="3.2.6">
+        version="3.2.7">
 
   <name>Custom URL scheme</name>
 
@@ -41,6 +41,14 @@
             <string>$URL_SCHEME</string>
             <string>gsd-$URL_SCHEME</string>
           </array>
+        </dict>
+      </array>
+    </config-file>
+    <config-file target="*-Info.plist" parent="NSAppTransportSecurity">
+      <array>
+        <dict>
+          <key>NSAllowsArbitraryLoads</key>
+          <true/>
         </dict>
       </array>
     </config-file>
