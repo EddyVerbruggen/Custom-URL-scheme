@@ -45,12 +45,10 @@
       </array>
     </config-file>
     <config-file target="*-Info.plist" parent="NSAppTransportSecurity">
-      <array>
         <dict>
           <key>NSAllowsArbitraryLoads</key>
           <true/>
         </dict>
-      </array>
     </config-file>
   </platform>
 
