@@ -19,6 +19,8 @@ public class LaunchMyApp extends CordovaPlugin {
   private static final String ACTION_CLEARINTENT = "clearIntent";
   private static final String ACTION_GETLASTINTENT = "getLastIntent";
 
+  private String lastIntentString = null;
+
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
     if (ACTION_CLEARINTENT.equalsIgnoreCase(action)) {
