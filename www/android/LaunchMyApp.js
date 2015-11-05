@@ -30,13 +30,17 @@
 
   document.addEventListener("deviceready", triggerOpenURL, false);
 
-  function getLastIntent(success, failure) {
-    cordova.exec(
-      success,
-      failure,
-      "LaunchMyApp",
-      "getLastIntent",
-      []);
+  var launchmyapp = {
+    getLastIntent: function(success, failure) {
+      cordova.exec(
+        success,
+        failure,
+        "LaunchMyApp",
+        "getLastIntent",
+        []);
+    }
   }
+
+  module.exports = launchmyapp;
 
 }());
