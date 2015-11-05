@@ -29,4 +29,14 @@
   }
 
   document.addEventListener("deviceready", triggerOpenURL, false);
+
+  function getLastIntent(success, failure) {
+    cordova.exec(
+      success,
+      failure,
+      "LaunchMyApp",
+      "getLastIntent",
+      []);
+  }
+
 }());

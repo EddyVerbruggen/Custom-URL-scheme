@@ -17,6 +17,7 @@ public class LaunchMyApp extends CordovaPlugin {
 
   private static final String ACTION_CHECKINTENT = "checkIntent";
   private static final String ACTION_CLEARINTENT = "clearIntent";
+  private static final String ACTION_GETLASTINTENT = "getLastIntent";
 
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -28,9 +29,17 @@ public class LaunchMyApp extends CordovaPlugin {
       final Intent intent = ((CordovaActivity) this.webView.getContext()).getIntent();
       final String intentString = intent.getDataString();
       if (intentString != null && intent.getScheme() != null) {
+	 lastIntentString = intentString;
         callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, intent.getDataString()));
       } else {
         callbackContext.error("App was not started via the launchmyapp URL scheme. Ignoring this errorcallback is the best approach.");
+      }
+      return true;
+    } else if (ACTION_GETLASTINTENT.equalsIgnoreCase(action)) {
+      if(lastIntentString != null) {
+        callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, lastIntentString));
+      } else {
+        callbackContext.error("No intent received so far.");
       }
       return true;
     } else {
