@@ -168,6 +168,25 @@ function handleOpenURL(url) {
 A more useful implementation would mean parsing the URL, saving any params to sessionStorage and redirecting the app to the correct page inside your app.
 All this happens before the first page is loaded.
 
+### Meteor
+When running a [meteor](meteor.com) app in the cordova environment, `handleOpenURL` doesn't get called after a cold start, because cordova resets the javascript world during startup and our timer waiting for `handleOpenURL` gets vanished (see [#98](https://github.com/EddyVerbruggen/Custom-URL-scheme/issues/98)). To get the intent by which the app was started in a meteor cordova app you need to ask for it from the meteor side with `getLastIntent` like this.
+```javascript
+Meteor.startup(function() {
+  if (Meteor.isCordova) {
+    window.plugins.launchmyapp.getLastIntent(function(url) {
+      if (intent.indexOf('mycoolapp://' > -1)) {
+        console.log("received url: " + url);
+      } else {
+        return console.log("ignore intent: " + url);
+      }
+    }, function(error) {
+      return console.log("no intent received");
+    });
+    return;
+  }
+});
+```
+
 ## 4. URL Scheme hints
 Please choose a URL_SCHEME which which complies to these restrictions:
 - Don't use an already registered scheme (like `fb`, `twitter`, `comgooglemaps`, etc).
