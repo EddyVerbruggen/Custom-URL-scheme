@@ -68,7 +68,7 @@
       </intent-filter>
     </config-file>
   </platform>
-  
+
   <!-- windows8 -->
   <platform name="windows8">
     <config-file target="package.appxmanifest" parent="/Package/Applications/Application/Extensions">
@@ -76,12 +76,12 @@
         <Protocol Name="$URL_SCHEME" />
       </Extension>
     </config-file>
-    
+
     <js-module src="www/windows/LaunchMyApp.js" name="LaunchMyApp">
       <clobbers target="window.plugins.launchmyapp" />
     </js-module>
   </platform>
-	
+
   <!-- windows -->
   <platform name="windows">
     <config-file target="package.windows.appxmanifest" parent="/Package/Applications/Application/Extensions">
@@ -103,5 +103,29 @@
       <clobbers target="window.plugins.launchmyapp" />
     </js-module>
   </platform>
+
+  <!-- wp8 -->
+    <platform name="wp8">
+      <config-file target="config.xml" parent="/*">
+        <feature name="CustomUriMapperCommand">
+          <param name="wp-package" value="CustomUriMapperCommand"/>
+          <param name="onload" value="true" />
+        </feature>
+      </config-file>
+
+      <config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App" after="Tokens">
+          <Extensions>
+              <Protocol Name="$URL_SCHEME" NavUriFragment="encodedLaunchUri=%s" TaskID="_default" />
+          </Extensions>
+      </config-file>
+
+      <source-file src="src/wp8/CompositeUriMapper.cs" />
+      <source-file src="src/wp8/ICustomUriMapper.cs" />
+        <source-file src="src/wp8/CustomUriMapperCommand.cs" />
+      <js-module src="www/wp8/LaunchMyApp.js" name="LaunchMyApp">
+        <clobbers target="window.plugins.launchmyapp" />
+      </js-module>
+      <hook type="after_plugin_install" src="src/wp8/hooks/add-uri-mapper.js" />
+    </platform>
 
 </plugin>
