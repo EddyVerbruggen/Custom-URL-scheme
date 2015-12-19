@@ -169,6 +169,9 @@ function handleOpenURL(url) {
 A more useful implementation would mean parsing the URL, saving any params to sessionStorage and redirecting the app to the correct page inside your app.
 All this happens before the first page is loaded.
 
+### CSP - or: `handleOpenURL` doesn't work
+The Whitelist plugin will prevent inline JS from executing, unless you whitelist the url scheme. Please see [this SO issue](http://stackoverflow.com/questions/34257097/using-handleopenurl-with-custom-url-scheme-in-cordova/34281420#34281420) for details.
+
 ### Meteor
 When running a [meteor](meteor.com) app in the cordova environment, `handleOpenURL` doesn't get called after a cold start, because cordova resets the javascript world during startup and our timer waiting for `handleOpenURL` gets vanished (see [#98](https://github.com/EddyVerbruggen/Custom-URL-scheme/issues/98)). To get the intent by which the app was started in a meteor cordova app you need to ask for it from the meteor side with `getLastIntent` like this.
 ```javascript
