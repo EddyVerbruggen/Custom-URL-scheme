@@ -1,6 +1,6 @@
 # Custom URL scheme PhoneGap Plugin
 #### launch your app by a link like this: `mycoolapp://`
-for iOS and Android, by [Eddy Verbruggen](http://www.x-services.nl)
+for iOS, Android and WP, by [Eddy Verbruggen](http://www.x-services.nl)
 - This repo is for PhoneGap 3.0.0 and up
 - For PhoneGap 2.9.0 and lower, [switch to the phonegap-2.9.0-and-lower branch](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin/tree/phonegap-2.9.0-and-lower)
 
