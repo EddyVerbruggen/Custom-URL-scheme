@@ -3,6 +3,8 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="nl.x-services.plugins.launchmyapp"
         version="4.1.0">
+        id="cordova-plugin-customurlscheme"
+        version="4.1.1">
 
   <name>Custom URL scheme</name>
 
@@ -59,7 +61,7 @@
 
     <source-file src="src/android/nl/xservices/plugins/LaunchMyApp.java" target-dir="src/nl/xservices/plugins"/>
 
-    <config-file target="AndroidManifest.xml" parent="/*/application/activity">
+    <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
       <intent-filter>
         <data android:scheme="$URL_SCHEME"/>
         <action android:name="android.intent.action.VIEW" />
