@@ -1,10 +1,12 @@
 (function () {
-	function activatedHandler(e) {
-		if (typeof handleOpenURL == 'function' && e.uri) {
-			handleOpenURL(e.uri.rawUri);
-		}
-	};
-	
-	var wui = Windows.UI.WebUI.WebUIApplication;
-	wui.addEventListener("activated", activatedHandler, false);
+    function activatedHandlerWinUI(e) {
+        if (typeof handleOpenURL == 'function' && e.uri) {
+            handleOpenURL(e.uri.rawUri);
+        }
+    };
+
+	if (typeof Windows != 'undefined') {
+	    var wui = Windows.UI.WebUI.WebUIApplication;
+	    wui.addEventListener("activated", activatedHandlerWinUI, false);
+	}
 }());
