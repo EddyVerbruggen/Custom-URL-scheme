@@ -25,13 +25,17 @@ public class LaunchMyApp extends CordovaPlugin {
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
     if (ACTION_CLEARINTENT.equalsIgnoreCase(action)) {
       final Intent intent = ((CordovaActivity) this.webView.getContext()).getIntent();
-      intent.setData(null);
+      // Telerik LiveSync needs the data object as well, see /pull/3 in the Telerik Verified Plugins fork
+      final String intentString = intent.getDataString();
+      if (intentString == null || !intentString.contains("platform.telerik.com")) {
+        intent.setData(null);
+      }
       return true;
     } else if (ACTION_CHECKINTENT.equalsIgnoreCase(action)) {
       final Intent intent = ((CordovaActivity) this.webView.getContext()).getIntent();
       final String intentString = intent.getDataString();
       if (intentString != null && intent.getScheme() != null) {
-	 lastIntentString = intentString;
+	      lastIntentString = intentString;
         callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, intent.getDataString()));
       } else {
         callbackContext.error("App was not started via the launchmyapp URL scheme. Ignoring this errorcallback is the best approach.");
@@ -54,7 +58,10 @@ public class LaunchMyApp extends CordovaPlugin {
   public void onNewIntent(Intent intent) {
     final String intentString = intent.getDataString();
     if (intentString != null && intent.getScheme() != null) {
-      intent.setData(null);
+      // Telerik LiveSync needs the data object as well, see /pull/3 in the Telerik Verified Plugins fork
+      if (!intentString.contains("platform.telerik.com")) {
+        intent.setData(null);
+      }
       try {
         StringWriter writer = new StringWriter(intentString.length() * 2);
         escapeJavaStyleString(writer, intentString, true, false);
