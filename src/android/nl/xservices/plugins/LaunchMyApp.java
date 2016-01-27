@@ -20,14 +20,18 @@ public class LaunchMyApp extends CordovaPlugin {
   private static final String ACTION_GETLASTINTENT = "getLastIntent";
 
   private String lastIntentString = null;
+  private boolean resetIntent = true;
+
+  @Override
+  public void initialize(final CordovaInterface cordova, CordovaWebView webView){
+    this.resetIntent = preferences.getBoolean("resetIntent", true);
+  }
 
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
     if (ACTION_CLEARINTENT.equalsIgnoreCase(action)) {
       final Intent intent = ((CordovaActivity) this.webView.getContext()).getIntent();
-      // Telerik LiveSync needs the data object as well, see /pull/3 in the Telerik Verified Plugins fork
-      final String intentString = intent.getDataString();
-      if (intentString == null || !intentString.contains("platform.telerik.com")) {
+      if(resetIntent){
         intent.setData(null);
       }
       return true;
@@ -58,8 +62,7 @@ public class LaunchMyApp extends CordovaPlugin {
   public void onNewIntent(Intent intent) {
     final String intentString = intent.getDataString();
     if (intentString != null && intent.getScheme() != null) {
-      // Telerik LiveSync needs the data object as well, see /pull/3 in the Telerik Verified Plugins fork
-      if (!intentString.contains("platform.telerik.com")) {
+      if(resetIntent){
         intent.setData(null);
       }
       try {
