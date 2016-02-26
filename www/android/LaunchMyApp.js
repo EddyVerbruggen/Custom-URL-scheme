@@ -5,7 +5,7 @@
 
   function waitForAndCallHandlerFunction(url) {
     if (typeof window.handleOpenURL === "function") {
-      // Clear the intent when we have a handler
+      // Clear the intent when we have a handler (note that this is only done when the preference 'CustomURLSchemePluginClearsAndroidIntent' is 'true' in config.xml
       cordova.exec(
           null,
           null,

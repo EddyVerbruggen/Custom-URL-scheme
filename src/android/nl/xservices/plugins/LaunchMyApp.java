@@ -36,7 +36,7 @@ public class LaunchMyApp extends CordovaPlugin {
   @Override
   public void initialize(final CordovaInterface cordova, CordovaWebView webView){
     this.resetIntent = preferences.getBoolean("resetIntent", false) ||
-        preferences.getBoolean("CustomURLSchemePluginClearsAndroidIntent", false) ||
+        preferences.getBoolean("CustomURLSchemePluginClearsAndroidIntent", false);
   }
 
   @Override
@@ -51,7 +51,7 @@ public class LaunchMyApp extends CordovaPlugin {
       final Intent intent = ((CordovaActivity) this.webView.getContext()).getIntent();
       final String intentString = intent.getDataString();
       if (intentString != null && intent.getScheme() != null) {
-	      lastIntentString = intentString;
+        lastIntentString = intentString;
         callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, intent.getDataString()));
       } else {
         callbackContext.error("App was not started via the launchmyapp URL scheme. Ignoring this errorcallback is the best approach.");
