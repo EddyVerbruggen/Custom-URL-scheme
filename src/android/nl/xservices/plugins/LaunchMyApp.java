@@ -22,18 +22,28 @@ public class LaunchMyApp extends CordovaPlugin {
   private static final String ACTION_GETLASTINTENT = "getLastIntent";
 
   private String lastIntentString = null;
-  private boolean resetIntent = true;
+
+  /**
+   * We don't want to interfere with other plugins requiring the intent data,
+   * but in case of a multi-page app your app may receive the same intent data
+   * multiple times, that's why you'll get an option to reset it (null it).
+   *
+   * Add this to config.xml to enable that behaviour (default false):
+   *   <preference name="CustomURLSchemePluginClearsAndroidIntent" value="true"/>
+   */
+  private boolean resetIntent;
 
   @Override
   public void initialize(final CordovaInterface cordova, CordovaWebView webView){
-    this.resetIntent = preferences.getBoolean("resetIntent", true);
+    this.resetIntent = preferences.getBoolean("resetIntent", false) ||
+        preferences.getBoolean("CustomURLSchemePluginClearsAndroidIntent", false) ||
   }
 
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
     if (ACTION_CLEARINTENT.equalsIgnoreCase(action)) {
       final Intent intent = ((CordovaActivity) this.webView.getContext()).getIntent();
-      if(resetIntent){
+      if (resetIntent){
         intent.setData(null);
       }
       return true;
@@ -64,7 +74,7 @@ public class LaunchMyApp extends CordovaPlugin {
   public void onNewIntent(Intent intent) {
     final String intentString = intent.getDataString();
     if (intentString != null && intent.getScheme() != null) {
-      if(resetIntent){
+      if (resetIntent){
         intent.setData(null);
       }
       try {

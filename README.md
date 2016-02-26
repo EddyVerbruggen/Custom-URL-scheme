@@ -33,6 +33,7 @@ This plugin allows you to start your app by calling it with a URL like `mycoolap
 * Unlike iOS, there is no way to use config.xml to define a scheme for your app. Now there is.
 * Tested on Android 4.3, will most likely work with 2.2 and up.
 * If you're trying to launch your app from an In-App Browser it opened previously, then [use this In-App Browser plugin fork](https://github.com/Innovation-District/cordova-plugin-inappbrowser) which allows that.
+* In case you have a multi-page app (multiple HTML files, and all implementing handleOpenURL), set the preference `CustomURLSchemePluginClearsAndroidIntent` to `true` in `config.xml` so the function won't be triggered multiple times. Note that this may interfere with other plugins requiring the intent data.
 
 
 ## 2. Installation
