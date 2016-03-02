@@ -11,7 +11,7 @@ for iOS, Android and WP, by [Eddy Verbruggen](http://www.x-services.nl)
 	2. [PhoneGap Build](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#phonegap-build)
 3. [Usage](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#3-usage)
 	2. [iOS](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#ios-usage)
-	2. [Meteor](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#meteor)
+	2. [Meteor](https://github.com/EddyVerbruggen/Custom-URL-scheme#meteor--getlastintent-android-only)
 4. [URL Scheme hints](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#4-url-scheme-hints)
 5. [License](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#5-license)
 
