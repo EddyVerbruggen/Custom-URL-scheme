@@ -84,6 +84,12 @@
 
   <!-- windows -->
   <platform name="windows">
+    <hook type="before_prepare" src="src/windows/hooks/prepare-manifest.js" />
+    <config-file target="package.windows10.appxmanifest" parent="/Package/Applications/Application/Extensions">
+      <uap:Extension Category="windows.protocol" StartPage="www/index.html">
+        <uap:Protocol Name="$URL_SCHEME" />
+      </uap:Extension>
+    </config-file>
     <config-file target="package.windows.appxmanifest" parent="/Package/Applications/Application/Extensions">
       <Extension Category="windows.protocol" StartPage="www/index.html">
         <Protocol Name="$URL_SCHEME" />
