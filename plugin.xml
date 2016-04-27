@@ -22,6 +22,7 @@
   <issue>https://github.com/EddyVerbruggen/Custom-URL-scheme/issues</issue>
 
   <preference name="URL_SCHEME" />
+  <preference name="URL_SCHEME_SECONDARY" />
 
   <engines>
     <engine name="cordova" version=">=3.0.0"/>
@@ -39,6 +40,12 @@
           <key>CFBundleURLSchemes</key>
           <array>
             <string>$URL_SCHEME</string>
+          </array>
+        </dict>
+        <dict>
+          <key>CFBundleURLSchemes</key>
+          <array>
+            <string>$URL_SCHEME_SECONDARY</string>
           </array>
         </dict>
       </array>
