@@ -85,6 +85,12 @@
               android:host="$ANDROID_HOST"
               android:pathPrefix="$ANDROID_PATHPREFIX" />
       </intent-filter>
+      <intent-filter>
+        <data android:scheme="$SECOND_URL_SCHEME"/>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+      </intent-filter>
     </config-file>
   </platform>
 
@@ -141,6 +147,7 @@
       <config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App" after="Tokens">
           <Extensions>
               <Protocol Name="$URL_SCHEME" NavUriFragment="encodedLaunchUri=%s" TaskID="_default" />
+              <Protocol Name="$SECOND_URL_SCHEME" NavUriFragment="encodedLaunchUri=%s" TaskID="_default" />
           </Extensions>
       </config-file>
 
