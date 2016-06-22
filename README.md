@@ -1,24 +1,24 @@
-# Custom URL scheme PhoneGap Plugin
+# Custom URL scheme Cordova/PhoneGap Plugin
 #### launch your app by a link like this: `mycoolapp://`
 for iOS, Android and WP, by [Eddy Verbruggen](http://www.x-services.nl)
 - This repo is for PhoneGap 3.0.0 and up
-- For PhoneGap 2.9.0 and lower, [switch to the phonegap-2.9.0-and-lower branch](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin/tree/phonegap-2.9.0-and-lower)
+- For PhoneGap 2.9.0 and lower, [switch to the phonegap-2.9.0-and-lower branch](https://github.com/EddyVerbruggen/Custom-URL-scheme/tree/phonegap-2.9.0-and-lower)
 
-1. [Description](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#1-description)
-2. [Installation](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#2-installation)
-	2. [Automatically (CLI / Plugman)](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#automatically-cli--plugman)
-	2. [Manually](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#manually)
-	2. [PhoneGap Build](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#phonegap-build)
-3. [Usage](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#3-usage)
-	2. [iOS](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#ios-usage)
+1. [Description](https://github.com/EddyVerbruggen/Custom-URL-scheme#1-description)
+2. [Installation](https://github.com/EddyVerbruggen/Custom-URL-scheme#2-installation)
+	2. [Automatically (CLI / Plugman)](https://github.com/EddyVerbruggen/Custom-URL-scheme#automatically-cli--plugman)
+	2. [Manually](https://github.com/EddyVerbruggen/Custom-URL-scheme#manually)
+	2. [PhoneGap Build](https://github.com/EddyVerbruggen/Custom-URL-scheme#phonegap-build)
+3. [Usage](https://github.com/EddyVerbruggen/Custom-URL-scheme#3-usage)
+	2. [iOS](https://github.com/EddyVerbruggen/Custom-URL-scheme#ios-usage)
 	2. [Meteor](https://github.com/EddyVerbruggen/Custom-URL-scheme#meteor--getlastintent-android-only)
-4. [URL Scheme hints](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#4-url-scheme-hints)
-5. [License](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#5-license)
+4. [URL Scheme hints](https://github.com/EddyVerbruggen/Custom-URL-scheme#4-url-scheme-hints)
+5. [License](https://github.com/EddyVerbruggen/Custom-URL-scheme#5-license)
 
 
 ### BEWARE: 
 ### - [This Apache Cordova issue](https://issues.apache.org/jira/browse/CB-7606) causes problems with Cordova-iOS 3.7.0: the `handleOpenURL` function is not invoked upon cold start. Use a higher or lower version than 3.7.0.
-### - As of iOS 9.2, the dialog `Open in "mycoolapp"?` no longer blocks JS, so if you have a short timeout that opens the app store, the user will be taken to the store before they have a chance to see and answer the dialog. [See below](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#ios-usage) for available solutions.
+### - As of iOS 9.2, the dialog `Open in "mycoolapp"?` no longer blocks JS, so if you have a short timeout that opens the app store, the user will be taken to the store before they have a chance to see and answer the dialog. [See below](https://github.com/EddyVerbruggen/Custom-URL-scheme#ios-usage) for available solutions.
 
 ## 1. Description
 
@@ -53,7 +53,7 @@ $ cordova plugin add cordova-plugin-customurlscheme --variable URL_SCHEME=mycool
 
 Bleeding edge master version from Github:
 ```
-$ cordova plugin add https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin.git --variable URL_SCHEME=mycoolapp
+$ cordova plugin add https://github.com/EddyVerbruggen/Custom-URL-scheme.git --variable URL_SCHEME=mycoolapp
 ```
 (Note that the Phonegap CLI didn't support `--variable` before version 3.6.3, so please use the Cordova CLI as shown above in case you're on an older version)
 
@@ -128,7 +128,7 @@ In order to be able to restore the plugin settings on `cordova plugin add`, one 
 ```xml
   <feature name="Custom URL scheme">
     <param name="id" value="cordova-plugin-customurlscheme" />
-    <param name="url" value="https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin.git" />
+    <param name="url" value="https://github.com/EddyVerbruggen/Custom-URL-scheme.git" />
     <variable name="URL_SCHEME" value="mycoolapp" /><!-- change as appropriate -->
   </feature>
 ```
