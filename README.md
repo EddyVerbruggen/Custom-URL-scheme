@@ -141,7 +141,7 @@ cordova-cli 4.3.+ and cordova-android 3.7.1+
 
 ## 3. Usage
 
-1a\. Your app can be launced by linking to it like this from a website or an email for example (all of these will work):
+1a\. Your app can be launched by linking to it like this from a website or an email for example (all of these will work):
 ```html
 <a href="mycoolapp://">Open my app</a>
 <a href="mycoolapp://somepath">Open my app</a>
