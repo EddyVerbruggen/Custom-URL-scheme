@@ -4,17 +4,10 @@ using System.Windows.Navigation;
 
 internal class CompositeUriMapper : UriMapperBase
 {
-    public static string launchUrl;
+	public static string launchUrl;
 
 	public override Uri MapUri(Uri uri)
 	{
-        string launchUri = uri.ToString();
-        if (launchUri.StartsWith("/Protocol?encodedLaunchUri="))
-        {
-            int launchUrlIndex = launchUri.IndexOf("encodedLaunchUri=");
-            launchUrl = System.Net.HttpUtility.UrlDecode(launchUri.Substring(launchUrlIndex+17));
-            return new Uri("/MainPage.xaml", UriKind.Relative);
-        }
 		var assemblies = AppDomain.CurrentDomain.GetAssemblies();
 		var types = assemblies.SelectMany(a =>
 		{
@@ -32,14 +25,23 @@ internal class CompositeUriMapper : UriMapperBase
 		{
 			if (type != typeof(ICustomUriMapper))
 			{
-				var worker = (ICustomUriMapper)Activator.CreateInstance(type);
+				var worker = (ICustomUriMapper) Activator.CreateInstance(type);
 				var mappedUri = worker.CustomMapUri(uri);
 				if (mappedUri != null)
 				{
 					return mappedUri;
-	            }
+				}
 			}
 		}
+
+		var launchUri = uri.ToString();
+		if (launchUri.StartsWith("/Protocol?encodedLaunchUri="))
+		{
+			int launchUrlIndex = launchUri.IndexOf("encodedLaunchUri=");
+			launchUrl = System.Net.HttpUtility.UrlDecode(launchUri.Substring(launchUrlIndex + 17));
+			return new Uri("/MainPage.xaml", UriKind.Relative);
+		}
+
 
 		return uri;
 	}
