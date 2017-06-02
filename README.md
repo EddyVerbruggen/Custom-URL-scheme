@@ -5,7 +5,7 @@
 [![Downloads][downloads-image]][npm-url]
 [![Twitter Follow][twitter-image]][twitter-url]
 
-[npm-image]:http://img.shields.io/npm/v/Custom-URL-scheme.svg
+[npm-image]:http://img.shields.io/npm/v/cordova-plugin-customurlscheme.svg
 [npm-url]:https://npmjs.org/package/cordova-plugin-customurlscheme
 [downloads-image]:http://img.shields.io/npm/dm/cordova-plugin-customurlscheme.svg
 [twitter-image]:https://img.shields.io/twitter/follow/eddyverbruggen.svg?style=social&label=Follow%20me
