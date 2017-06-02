@@ -1,8 +1,16 @@
 # Custom URL scheme Cordova/PhoneGap Plugin
 #### launch your app by a link like this: `mycoolapp://`
-for iOS, Android and WP, by [Eddy Verbruggen](http://www.x-services.nl)
-- This repo is for PhoneGap 3.0.0 and up
-- For PhoneGap 2.9.0 and lower, [switch to the phonegap-2.9.0-and-lower branch](https://github.com/EddyVerbruggen/Custom-URL-scheme/tree/phonegap-2.9.0-and-lower)
+
+[![Build Status][build-status]][build-url]
+[![NPM version][npm-image]][npm-url]
+[![Downloads][downloads-image]][npm-url]
+[![Twitter Follow][twitter-image]][twitter-url]
+
+[npm-image]:http://img.shields.io/npm/v/Custom-URL-scheme.svg
+[npm-url]:https://npmjs.org/package/Custom-URL-scheme
+[downloads-image]:http://img.shields.io/npm/dm/Custom-URL-scheme.svg
+[twitter-image]:https://img.shields.io/twitter/follow/eddyverbruggen.svg?style=social&label=Follow%20me
+[twitter-url]:https://twitter.com/eddyverbruggen
 
 1. [Description](https://github.com/EddyVerbruggen/Custom-URL-scheme#1-description)
 2. [Installation](https://github.com/EddyVerbruggen/Custom-URL-scheme#2-installation)
