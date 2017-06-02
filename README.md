@@ -1,7 +1,6 @@
 # Custom URL scheme Cordova/PhoneGap Plugin
 #### launch your app by a link like this: `mycoolapp://`
 
-[![Build Status][build-status]][build-url]
 [![NPM version][npm-image]][npm-url]
 [![Downloads][downloads-image]][npm-url]
 [![Twitter Follow][twitter-image]][twitter-url]
