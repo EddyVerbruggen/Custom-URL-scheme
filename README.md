@@ -6,8 +6,8 @@
 [![Twitter Follow][twitter-image]][twitter-url]
 
 [npm-image]:http://img.shields.io/npm/v/Custom-URL-scheme.svg
-[npm-url]:https://npmjs.org/package/Custom-URL-scheme
-[downloads-image]:http://img.shields.io/npm/dm/Custom-URL-scheme.svg
+[npm-url]:https://npmjs.org/package/cordova-plugin-customurlscheme
+[downloads-image]:http://img.shields.io/npm/dm/cordova-plugin-customurlscheme.svg
 [twitter-image]:https://img.shields.io/twitter/follow/eddyverbruggen.svg?style=social&label=Follow%20me
 [twitter-url]:https://twitter.com/eddyverbruggen
 
