@@ -13,6 +13,7 @@ import org.json.JSONException;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.net.URLEncoder;
 import java.util.Locale;
 
 public class LaunchMyApp extends CordovaPlugin {
@@ -80,7 +81,7 @@ public class LaunchMyApp extends CordovaPlugin {
       try {
         StringWriter writer = new StringWriter(intentString.length() * 2);
         escapeJavaStyleString(writer, intentString, true, false);
-        webView.loadUrl("javascript:handleOpenURL('" + writer.toString() + "');");
+        webView.loadUrl("javascript:handleOpenURL('" + URLEncoder.encode(writer.toString()) + "');");
       } catch (IOException ignore) {
       }
     }
