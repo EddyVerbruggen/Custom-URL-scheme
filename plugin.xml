@@ -23,6 +23,7 @@
 
   <preference name="URL_SCHEME" />
   <preference name="SECOND_URL_SCHEME" />
+  <preference name="THIRD_URL_SCHEME" />
 
   <engines>
     <engine name="cordova" version=">=3.0.0"/>
@@ -46,6 +47,12 @@
           <key>CFBundleURLSchemes</key>
           <array>
             <string>$SECOND_URL_SCHEME</string>
+          </array>
+        </dict>
+        <dict>
+          <key>CFBundleURLSchemes</key>
+          <array>
+            <string>$THIRD_URL_SCHEME</string>
           </array>
         </dict>
       </array>
@@ -87,6 +94,12 @@
       </intent-filter>
       <intent-filter>
         <data android:scheme="$SECOND_URL_SCHEME"/>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+      </intent-filter>
+      <intent-filter>
+        <data android:scheme="$THIRD_URL_SCHEME"/>
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
@@ -148,6 +161,7 @@
           <Extensions>
               <Protocol Name="$URL_SCHEME" NavUriFragment="encodedLaunchUri=%s" TaskID="_default" />
               <Protocol Name="$SECOND_URL_SCHEME" NavUriFragment="encodedLaunchUri=%s" TaskID="_default" />
+              <Protocol Name="$THIRD_URL_SCHEME" NavUriFragment="encodedLaunchUri=%s" TaskID="_default" />
           </Extensions>
       </config-file>
 
