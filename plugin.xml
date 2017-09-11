@@ -50,7 +50,10 @@
     <preference name="ANDROID_SCHEME" default=" " />
     <preference name="ANDROID_HOST" default=" " />
     <preference name="ANDROID_PATHPREFIX" default="/" />
-
+    <preference name="ANDROID_SCHEME2" default=" " />
+    <preference name="ANDROID_HOST2" default=" " />
+    <preference name="ANDROID_PATHPREFIX2" default="/" />
+          
     <js-module src="www/android/LaunchMyApp.js" name="LaunchMyApp">
       <clobbers target="window.plugins.launchmyapp" />
     </js-module>
@@ -76,7 +79,10 @@
         <category android:name="android.intent.category.BROWSABLE" />
         <data android:scheme="$ANDROID_SCHEME"
               android:host="$ANDROID_HOST"
-              android:pathPrefix="$ANDROID_PATHPREFIX" />
+              android:pathPrefix="$ANDROID_PATHPREFIX"
+              android:scheme="$ANDROID_SCHEME2"
+              android:host="$ANDROID_HOST2"
+              android:pathPrefix="$ANDROID_PATHPREFIX2"/>
       </intent-filter>
     </config-file>
   </platform>
