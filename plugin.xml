@@ -79,8 +79,8 @@
         <category android:name="android.intent.category.BROWSABLE" />
         <data android:scheme="$ANDROID_SCHEME"
               android:host="$ANDROID_HOST"
-              android:pathPrefix="$ANDROID_PATHPREFIX"/>
-        <data android:scheme="$ANDROID_two_SCHEME"
+              android:pathPrefix="$ANDROID_PATHPREFIX"
+              android:scheme="$ANDROID_two_SCHEME"
               android:host="$ANDROID_two_HOST"
               android:pathPrefix="$ANDROID_two_PATHPREFIX"/>
       </intent-filter>
