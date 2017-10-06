@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
         id="cordova-plugin-customurlscheme"
         version="4.3.0">
 
@@ -123,27 +124,27 @@
   </platform>
 
   <!-- wp8 -->
-    <platform name="wp8">
-      <config-file target="config.xml" parent="/*">
-        <feature name="CustomUriMapperCommand">
-          <param name="wp-package" value="CustomUriMapperCommand"/>
-          <param name="onload" value="true" />
-        </feature>
-      </config-file>
+  <platform name="wp8">
+    <config-file target="config.xml" parent="/*">
+      <feature name="CustomUriMapperCommand">
+        <param name="wp-package" value="CustomUriMapperCommand"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
 
-      <config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App" after="Tokens">
-          <Extensions>
-              <Protocol Name="$URL_SCHEME" NavUriFragment="encodedLaunchUri=%s" TaskID="_default" />
-          </Extensions>
-      </config-file>
+    <config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App" after="Tokens">
+      <Extensions>
+        <Protocol Name="$URL_SCHEME" NavUriFragment="encodedLaunchUri=%s" TaskID="_default" />
+      </Extensions>
+    </config-file>
 
-      <source-file src="src/wp8/CompositeUriMapper.cs" />
-      <source-file src="src/wp8/ICustomUriMapper.cs" />
-        <source-file src="src/wp8/CustomUriMapperCommand.cs" />
-      <js-module src="www/wp8/LaunchMyApp.js" name="LaunchMyApp">
-        <clobbers target="window.plugins.launchmyapp" />
-      </js-module>
-      <hook type="after_plugin_install" src="src/wp8/hooks/add-uri-mapper.js" />
-    </platform>
+    <source-file src="src/wp8/CompositeUriMapper.cs" />
+    <source-file src="src/wp8/ICustomUriMapper.cs" />
+    <source-file src="src/wp8/CustomUriMapperCommand.cs" />
+    <js-module src="www/wp8/LaunchMyApp.js" name="LaunchMyApp">
+      <clobbers target="window.plugins.launchmyapp" />
+    </js-module>
+    <hook type="after_plugin_install" src="src/wp8/hooks/add-uri-mapper.js" />
+  </platform>
 
 </plugin>
