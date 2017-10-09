@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
         id="cordova-plugin-customurlscheme"
         version="4.3.0">
 
@@ -97,24 +96,18 @@
 
   <!-- windows -->
   <platform name="windows">
-    <hook type="before_prepare" src="src/windows/hooks/prepare-manifest.js" />
-    <config-file target="package.windows10.appxmanifest" parent="/Package/Applications/Application/Extensions">
-      <uap:Extension Category="windows.protocol">
-        <uap:Protocol Name="$URL_SCHEME" />
-      </uap:Extension>
-    </config-file>
     <config-file target="package.windows.appxmanifest" parent="/Package/Applications/Application/Extensions">
-      <Extension Category="windows.protocol">
+      <Extension Category="windows.protocol" StartPage="www/index.html">
         <Protocol Name="$URL_SCHEME" />
       </Extension>
     </config-file>
     <config-file target="package.windows80.appxmanifest" parent="/Package/Applications/Application/Extensions">
-      <Extension Category="windows.protocol">
+      <Extension Category="windows.protocol" StartPage="www/index.html">
         <Protocol Name="$URL_SCHEME" />
       </Extension>
     </config-file>
     <config-file target="package.phone.appxmanifest" parent="/Package/Applications/Application/Extensions">
-      <Extension Category="windows.protocol">
+      <Extension Category="windows.protocol" StartPage="www/index.html">
         <Protocol Name="$URL_SCHEME" />
       </Extension>
     </config-file>
