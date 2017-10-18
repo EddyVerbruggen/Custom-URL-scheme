@@ -84,6 +84,17 @@
               android:host="$ANDROID_TWO_HOST"
               android:pathPrefix="$ANDROID_TWO_PATHPREFIX"/>
       </intent-filter>
+       <intent-filter>
+        <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <data android:scheme="$ANDROID_SCHEME"
+              android:host="$ANDROID_HOST"
+              android:pathPrefix="$ANDROID_PATHPREFIX"/>
+        <data   android:scheme="$ANDROID_TWO_SCHEME"
+              android:host="$ANDROID_TWO_HOST"
+              android:pathPrefix="$ANDROID_TWO_PATHPREFIX"/>
+      </intent-filter>
     </config-file>
   </platform>
 
