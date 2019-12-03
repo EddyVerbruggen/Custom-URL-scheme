@@ -1,7 +1,7 @@
 module.exports  = function (context) {
-    var deferred = context.requireCordovaModule('q').defer(),
-        fs = context.requireCordovaModule('fs'),
-        path = context.requireCordovaModule('path'),
+    var deferred = require('q').defer(),
+        fs = require('fs'),
+        path = require('path'),
         projectRoot = context.opts.projectRoot;
         
     // While on AppBuilder this may work, the Cordova CLI doesn't like it
