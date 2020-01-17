@@ -199,7 +199,7 @@ When running a [meteor](meteor.com) app in the cordova environment, `handleOpenU
 Meteor.startup(function() {
   if (Meteor.isCordova) {
     window.plugins.launchmyapp.getLastIntent(function(url) {
-      if (intent.indexOf('mycoolapp://' > -1)) {
+      if (url.indexOf('mycoolapp://' > -1)) {
         console.log("received url: " + url);
       } else {
         return console.log("ignore intent: " + url);
