@@ -2,7 +2,6 @@ package nl.xservices.plugins;
 
 import android.content.Intent;
 import org.apache.cordova.CallbackContext;
-import org.apache.cordova.CordovaActivity;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaWebView;
@@ -43,13 +42,13 @@ public class LaunchMyApp extends CordovaPlugin {
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
     if (ACTION_CLEARINTENT.equalsIgnoreCase(action)) {
-      final Intent intent = ((CordovaActivity) this.webView.getContext()).getIntent();
+      final Intent intent = this.cordova.getActivity().getIntent();
       if (resetIntent){
         intent.setData(null);
       }
       return true;
     } else if (ACTION_CHECKINTENT.equalsIgnoreCase(action)) {
-      final Intent intent = ((CordovaActivity) this.webView.getContext()).getIntent();
+      final Intent intent = this.cordova.getActivity().getIntent();
       final String intentString = intent.getDataString();
       if (intentString != null && intent.getScheme() != null) {
         lastIntentString = intentString;
