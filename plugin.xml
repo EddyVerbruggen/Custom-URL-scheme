@@ -83,8 +83,10 @@
 
   <!-- windows8 -->
   <platform name="windows8">
+    <preference name="WINDOWS_START_PAGE" default="www/index.html" />
+
     <config-file target="package.appxmanifest" parent="/Package/Applications/Application/Extensions">
-      <Extension Category="windows.protocol" StartPage="www/index.html">
+      <Extension Category="windows.protocol" StartPage="$WINDOWS_START_PAGE">
         <Protocol Name="$URL_SCHEME" />
       </Extension>
     </config-file>
@@ -96,18 +98,20 @@
 
   <!-- windows -->
   <platform name="windows">
+    <preference name="WINDOWS_START_PAGE" default="www/index.html" />
+
     <config-file target="package.windows.appxmanifest" parent="/Package/Applications/Application/Extensions">
-      <uap:Extension Category="windows.protocol" StartPage="www/index.html">
+      <uap:Extension Category="windows.protocol" StartPage="$WINDOWS_START_PAGE">
         <uap:Protocol Name="$URL_SCHEME" />
       </uap:Extension>
     </config-file>
     <config-file target="package.windows10.appxmanifest" parent="/Package/Applications/Application/Extensions">
-      <uap:Extension Category="windows.protocol" StartPage="www/index.html">
+      <uap:Extension Category="windows.protocol" StartPage="$WINDOWS_START_PAGE">
         <uap:Protocol Name="$URL_SCHEME" />
       </uap:Extension>
     </config-file>
     <config-file target="package.phone.appxmanifest" parent="/Package/Applications/Application/Extensions">
-      <uap:Extension Category="windows.protocol" StartPage="www/index.html">
+      <uap:Extension Category="windows.protocol" StartPage="$WINDOWS_START_PAGE">
         <uap:Protocol Name="$URL_SCHEME" />
       </uap:Extension>
     </config-file>
