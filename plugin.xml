@@ -63,7 +63,7 @@
 
     <source-file src="src/android/nl/xservices/plugins/LaunchMyApp.java" target-dir="src/nl/xservices/plugins"/>
 
-    <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
+    <config-file target="AndroidManifest.xml" android:exported="true" parent="/manifest/application/activity">
       <intent-filter>
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
