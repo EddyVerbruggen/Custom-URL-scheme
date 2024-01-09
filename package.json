@@ -1,9 +1,9 @@
 {
-  "name": "cordova-plugin-customurlscheme",
+  "name": "cordova-plugin-customurlscheme-v1",
   "version": "5.0.2",
   "description": "Launch your app by using this URL:  mycoolapp://, you can add a path and even pass params like this: mycoolerapp://somepath?foo=bar",
   "cordova": {
-    "id": "cordova-plugin-customurlscheme",
+    "id": "cordova-plugin-customurlscheme-v1",
     "platforms": [
       "ios",
       "android",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EddyVerbruggen/Custom-URL-scheme.git"
+    "url": "git+https://github.com/raeesaa/custom-url-scheme.git"
   },
   "keywords": [
     "Custom URL Scheme",

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="cordova-plugin-customurlscheme"
+        id="cordova-plugin-customurlscheme-v1"
         version="5.0.2">
 
   <name>Custom URL scheme</name>

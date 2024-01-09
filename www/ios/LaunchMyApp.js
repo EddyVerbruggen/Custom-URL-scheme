@@ -1,9 +1,29 @@
-"use strict";
+(function () {
+  "use strict";
 
-/*
- Q: Why an empty file?
- A: iOS doesn't need plumbing to get the plugin to work, so..
-    - Including no file would mean the import in index.html would differ per platform.
-    - Also, using one version and adding a userAgent check for Android feels wrong.
-    - And if you're not using PhoneGap Build, you could paste your handleOpenUrl JS function here.
-*/
+  var remainingAttempts = 10;
+
+  function waitForAndCallHandlerFunction(url) {
+    if (typeof window.handleOpenURL === "function") {
+      window.handleOpenURL(url);
+    } else if (remainingAttempts-- > 0) {
+      setTimeout(function () { waitForAndCallHandlerFunction(url); }, 500);
+    }
+  }
+
+  function triggerOpenURL() {
+    cordova.exec(
+      waitForAndCallHandlerFunction,
+      function (error) {
+        // Error callback
+        console.error("Error opening URL: " + url);
+      },
+      "LaunchMyApp",
+      "openURL",
+      []
+    );
+  }
+
+  document.addEventListener("deviceready", triggerOpenURL, false);
+
+}());

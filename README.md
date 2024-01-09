@@ -1,4 +1,9 @@
 # Custom URL scheme Cordova/PhoneGap Plugin
+
+### Fork of https://github.com/EddyVerbruggen/Custom-URL-scheme
+
+- Fixes issue of `handleOpenURL` not being called in latest versions of iOS.
+
 #### launch your app by a link like this: `mycoolapp://`
 
 [![NPM version][npm-image]][npm-url]
@@ -53,15 +58,12 @@ This plugin allows you to start your app by calling it with a URL like `mycoolap
 LaunchMyApp is compatible with [Cordova Plugman](https://github.com/apache/cordova-plugman).
 Replace `mycoolapp` by a nice scheme you want to have your app listen to:
 
-Latest release on npm:
+And run following command:
+
 ```
-$ cordova plugin add cordova-plugin-customurlscheme --variable URL_SCHEME=mycoolapp
+cordova plugin add https://github.com/raeesaa/segment-cordova-plugin.git --variable URL_SCHEME=mycoolapp
 ```
 
-Bleeding edge master version from Github:
-```
-$ cordova plugin add https://github.com/EddyVerbruggen/Custom-URL-scheme.git --variable URL_SCHEME=mycoolapp
-```
 (Note that the Phonegap CLI didn't support `--variable` before version 3.6.3, so please use the Cordova CLI as shown above in case you're on an older version)
 
 The LaunchMyApp.js file is brought in automatically.
